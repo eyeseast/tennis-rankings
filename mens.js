@@ -58,7 +58,9 @@ function main() {
 
                 // lets get some rankings, skipping the header row
                 var rankings = $('table.bioTableAlt').find('tr').slice(1).map(function(i, el) {
-                    var $el = $(el);
+                    var $el = $(el)
+                      , $td = $el.find('td');
+
                     return { 
                         // use the date object from above
                         date: d.format('YYYY-MM-DD'),
@@ -67,7 +69,13 @@ function main() {
                         player: $el.find('a').first().text(),
 
                         // rank is in span.rank
-                        rank: $el.find('span.rank').text()
+                        rank: $el.find('span.rank').text(),
+
+                        points: $td.eq(1).text().replace(',', ''),
+
+                        change: $td.eq(2).text(),
+
+                        tournaments: $td.eq(3).text()
                     }
                 });
                 // write out a csv for this week
