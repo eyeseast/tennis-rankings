@@ -1,0 +1,19 @@
+{
+  "name": "scrape-atp",
+  "version": "0.0.0",
+  "description": "A scraper for APT rankings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tennis",
+    "scraper"
+  ],
+  "author": "Chris Amico",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "request": "~2.37.0",
+    "cheerio": "~0.17.0"
+  }
+}
