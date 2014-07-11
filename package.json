@@ -1,5 +1,5 @@
 {
-  "name": "scrape-atp",
+  "name": "tennis-rankings",
   "version": "0.0.0",
   "description": "A scraper for APT rankings",
   "main": "index.js",
@@ -14,6 +14,9 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "request": "~2.37.0",
-    "cheerio": "~0.17.0"
+    "cheerio": "~0.17.0",
+    "moment": "~2.7.0",
+    "queue-async": "~1.0.7",
+    "dsv": "0.0.3"
   }
 }
