@@ -6,6 +6,7 @@ var cheerio = require('cheerio')
   , dsv = require('dsv')
   , csv = dsv(',')
   , fs = require('fs')
+  , mkdirp = require('mkdirp')
   , moment = require('moment')
   , request = require('request')
   , querystring = require('querystring')
@@ -35,9 +36,12 @@ function get_dates($) {
 /*
 Entrypoint function. 
 
-Grab the root rankings page, loop through available dates and write a csv to STDOUT.
+Grab the root rankings page, loop through available dates and write a csv for each week.
 */
 function main() {
+    // create output dir if needed
+    mkdirp.sync('csv/mens');
+
     // grab the root rankings page
     request(BASE_URL, function(err, resp, body) {
         // parse the response body
