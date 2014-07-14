@@ -6,10 +6,13 @@ Right now this covers [men's singles](http://www.atpworldtour.com/Rankings/Singl
 
 ## Use
 
-    $ node mens.js    # puts files in csv/mens
     $ node womens.js  # puts files in csv/womens
+    $ node mens.js    # puts files in csv/mens
 
 That's it for now. Run that, and you'll soon have a directory of `csv` files matching every week's rankings going back to 1973 for men and 1983 for women. 
 
-I decided to keep the files separate, because, as I start this just after Wimbledon, there are 1,639 weeks of data. If you want one giant file, see what [csvkit](http://csvkit.readthedocs.org/en/latest/scripts/csvstack.html) has to offer.
+(I decided to keep the files separate, because, as I start this just after Wimbledon, there are 1,639 weeks of data. If you want one giant file, see what [csvkit](http://csvkit.readthedocs.org/en/latest/scripts/csvstack.html) has to offer.)
 
+For more detailed analysis, run `python build.py` to load everything into a SQLite database (`tennis.db`). Rankings go into two tables, `women` and `men`.
+
+The included `Freezefile.yaml` will export two additional CSVs (women and men), showing the weekly rankings of players who have ever been ranked best in the world. This allows you to see how top players rose and fell in rankings over the entire course of their careers (or at least as long as they stayed in the top 100).

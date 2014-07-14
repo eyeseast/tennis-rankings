@@ -10,8 +10,6 @@ import os
 import dataset
 import sqlalchemy
 
-from unidecode import unidecode
-
 # always this database
 DATABASE = "sqlite:///tennis.db"
 
