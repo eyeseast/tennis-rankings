@@ -1,1 +1,2 @@
 dataset==0.5.4
+nameparser==0.3.1

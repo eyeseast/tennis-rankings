@@ -10,6 +10,8 @@ import os
 import dataset
 import sqlalchemy
 
+from nameparser import HumanName
+
 # always this database
 DATABASE = "sqlite:///tennis.db"
 
@@ -47,18 +49,16 @@ def main(table, csv_dir):
             print "Importing %s" % filename
 
             # read each file as csv
-            reader = csv.DictReader(f)
+            # store a list so we can insert 100 at a time
+            reader = list(csv.DictReader(f))
 
             # and loop through it
             for row in reader:
+                # fix dates and names
                 row['date'] = datetime.datetime.strptime(row['date'], DATE_FORMAT).date()
+                row['player'] = unicode(HumanName(row['player']))
 
-                # fix strings
-                for k, v in row.items():
-                    if k not in TYPES:
-                        row[k] = unicode(v, 'utf-8')
-
-                table.insert(row, types=TYPES)
+            table.insert_many(reader, types=TYPES)
 
 
 if __name__ == "__main__":

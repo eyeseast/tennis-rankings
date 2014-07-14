@@ -86,6 +86,7 @@ function main() {
                 var path = 'csv/mens/' + d.format('YYYY-MM-DD') + '.csv';
                 fs.writeFile(path, csv.format(rankings.toArray()), function(err) {
                     if (err) { console.error(err); }
+                    console.log('Wrote: %s', path);
                 });
             });
         });
