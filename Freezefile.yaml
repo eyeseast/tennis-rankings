@@ -8,5 +8,13 @@ exports:
     - query: "SELECT date, player, rank FROM women WHERE player IN (SELECT DISTINCT(player) FROM women WHERE rank = 1) ORDER BY player, date"
       filename: top/women.csv
 
+    - query: "SELECT player, count(*) AS weeks FROM women WHERE rank = 1 GROUP BY player ORDER BY weeks DESC"
+      filename: top/women-weeks.json
+      format: csv
+
     - query: "SELECT date, player, rank FROM men WHERE player IN (SELECT DISTINCT(player) FROM men WHERE rank = 1) ORDER BY player, date"
       filename: top/men.csv
+
+    - query: "SELECT player, count(*) AS weeks FROM men WHERE rank = 1 GROUP BY player ORDER BY weeks DESC"
+      filename: top/men-weeks.json
+      format: csv

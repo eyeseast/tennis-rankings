@@ -15,4 +15,8 @@ That's it for now. Run that, and you'll soon have a directory of `csv` files mat
 
 For more detailed analysis, run `python build.py` to load everything into a SQLite database (`tennis.db`). Rankings go into two tables, `women` and `men`.
 
-The included `Freezefile.yaml` will export two additional CSVs (women and men), showing the weekly rankings of players who have ever been ranked best in the world. This allows you to see how top players rose and fell in rankings over the entire course of their careers (or at least as long as they stayed in the top 100).
+The included `Freezefile.yaml` will export several additional CSVs:
+
+ - Showing the weekly rankings of players who have ever been ranked best in the world. This allows you to see how top players rose and fell in rankings over the entire course of their careers (or at least as long as they stayed in the top 100)
+
+ - Showing the number of weeks each player remained number 1. If you want to understand how dominant Steffi Graf (377), Martina Navratilova (214), Roger Federer (301) and Pete Sampras (285) have been in their careers, look at this list.
