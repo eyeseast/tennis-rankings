@@ -27,6 +27,9 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# python
+*.py[cod]
+
 # output
 *.csv
 *.db
